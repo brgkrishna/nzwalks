@@ -27,6 +27,8 @@ namespace NZWalks.API.Controllers
 			[FromQuery] string? sortBy, [FromQuery] bool? isAscending, [FromQuery] int pageNumber = 1, [FromQuery] int pageSize = 1000)
 		{
 			var walks = await _walksRepository.GetAll(isAscending ?? true, filterOn, query, sortBy, pageNumber, pageSize);
+
+			//throw new Exception("This is a new exception"); Uncomment this ti test the GlobalExcpetionhandler
 			return Ok(_mapper.Map<List<WalksDto>>(walks));
 		}
 

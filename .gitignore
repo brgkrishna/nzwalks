@@ -34,7 +34,6 @@ bld/
 [Bb]uild/
 [Oo]bj/
 [Ll]og/
-[Ll]ogs/
 coverage/**
 
 # Project-specific ignores
