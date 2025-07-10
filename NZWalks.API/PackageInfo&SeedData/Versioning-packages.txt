@@ -1,0 +1,2 @@
+Microsoft.AspNetCore.Mvc.versioning --> Deprecated --> use Asp.Versioning.Mvc
+Microsoft.AspNetCore.Mvc.versioning.ApiExplorer --> Swagger	   --> Deprecated --> use Asp.Versioning.Mvc.ApiExplorer
