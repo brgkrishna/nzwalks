@@ -56,8 +56,9 @@ namespace NZWalks.API.Controllers
 		}
 
 		[HttpPut]
+		[Route("{id}")]
 		[ValidateModel]
-		public async Task<IActionResult> Update(Guid id, UpdateWalkRequestDto updateWalkRequestDto)
+		public async Task<IActionResult> Update(Guid id, [FromBody]UpdateWalkRequestDto updateWalkRequestDto)
 		{
 			var walksDto = await _walksRepository.Update(id, updateWalkRequestDto);
 
@@ -70,6 +71,8 @@ namespace NZWalks.API.Controllers
 		}
 
 		[HttpDelete]
+		[Route("{id}")]
+
 		public async Task<IActionResult> Delete(Guid id)
 		{
 			var walksDto = await _walksRepository.Delete(id);

@@ -1,0 +1,45 @@
+﻿
+@model IEnumerable<NZWalks.UI.Models.Dto.WalksDto>
+@{
+}
+
+<h1 class="mt-2">Walks</h1>
+
+<div>
+<a class="btn btn-primary" asp-controller="Walks" asp-action="Add"> Insert Walk</a>
+
+<table class="table table-bordered">
+    <thead class="">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Length</th>
+            <th>Diffculty</th>
+            <th>Region</th>
+            <th> </th>
+            <th> </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var walk in Model)
+        {
+            <tr>
+                <td>@walk.Id</td>
+                <td>@walk.Name</td>
+                <td>@walk.Description</td>
+                <td>@walk.Length</td>
+                <td>@walk.Difficulty.Name</td>
+                <td>@walk.Region.Name</td>
+                <td> 
+                    <a class="btn btn-light" asp-controller="walks" asp-action="Edit" asp-route-id="@walk.Id">Edit</a>
+                </td>
+                <td>
+                    <a class="btn btn-light" asp-controller="walks" asp-action="Delete" asp-route-id="@walk.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>
+</div>
